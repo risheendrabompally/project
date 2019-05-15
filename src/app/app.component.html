@@ -1,0 +1,98 @@
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+ <body></body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+     
+    </div>
+   
+    
+  </div>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+     
+      <a class="navbar-brand" href="#">PET CARE</a>
+    
+      
+      <ul class="navbar-nav">
+        <li class="nav-item">
+            <a routerLink="customer" class="nav-link" role="button" routerLinkActive="active">Puppies</a>
+        </li>
+        <li class="nav-item" *ngIf="readLocalStorageValue('Role')== 'owner'" >
+            <a routerLink="add" class="nav-link" role="button" routerLinkActive="active">Add Puppy</a>
+        </li>
+        <!-- <li class="nav-item">
+            <a routerLink="findbyage" class="nav-link" role="button" routerLinkActive="active">Search</a>
+        </li> -->
+        <li class="nav-item" *ngIf="readLocalStorageValue('Role')!= 'nothing'" >
+            <a (click)="logout()" class="nav-link" role="button" routerLinkActive="active">LogOut</a> 
+        </li>
+        <li class="nav-item" *ngIf="readLocalStorageValue('Role')!= 'nothing'">
+          <a class="nav-link" role="button" >Welcome <b>{{readLocalStorageValue('uname')}}</b></a>
+      </li>
+    
+       
+        <li class="nav-item dropdown" *ngIf="readLocalStorageValue('Role')== 'nothing'">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+           Login
+          </a>
+          <div class="dropdown-menu">
+              <ul class="nav navbar-nav navbar-right">
+                  <a  class="dropdown-item" routerLink="login" role="button" routerLinkActive="active"><span class="glyphicon glyphicon"></span>Login As Borrower</a> 
+          
+                  <a class="dropdown-item" routerLink="ownerLogin" role="button" routerLinkActive="active"><span class="glyphicon glyphicon"></span>Login As Owner</a> 
+              
+                  
+              </ul> 
+          </div>
+        </li>
+     
+      
+          <li class="nav-item dropdown" *ngIf="readLocalStorageValue('Role')== 'nothing'">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Register
+           </a>
+           <div class="dropdown-menu">
+               <ul class="nav navbar-nav navbar-right">
+                   
+           
+                   <a class="dropdown-item" routerLink="ownerRegister" role="button" routerLinkActive="active"><span class="glyphicon glyphicon"></span>Register As Owner</a> 
+               
+                   <a  class="dropdown-item" routerLink="register" role="button" routerLinkActive="active"><span class="glyphicon glyphicon"></span>Register As Borrower</a> 
+               </ul> 
+           </div>
+        </li>
+      
+      </ul>
+    </nav>
+    <br>
+</nav> 
+<div style="padding: 20px;">
+  <router-outlet></router-outlet>
+</div>

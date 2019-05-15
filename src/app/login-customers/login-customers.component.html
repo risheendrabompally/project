@@ -1,0 +1,36 @@
+<!-- <h3>Login</h3>
+<div style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="lastname">Username</label>
+      <input type="text" class="form-control" id="uname" required [(ngModel)]="uname" name="uname">
+    </div>
+<div class="form-group">
+      <label for="lastname">Password</label>
+      <input type="text" class="form-control" id="pass" required [(ngModel)]="pass" name="pass">
+    </div>
+    <div class="btn-group">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>
+<ul>
+  <li *ngFor="let customer of customers">
+    <h4>{{customer.id}} - {{customer.name}} {{customer.email}}</h4>
+  </li>
+</ul> -->
+<form (ngSubmit)="onSubmit()">
+<div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>Pet<span>Borrower</span></div>
+		</div>
+		<br>
+		<div class="login">
+      <p *ngIf="readValue('loginmsg')!='nothing'">{{readValue('loginmsg')}}</p>
+				<input type="text" id="uname" required [(ngModel)]="user.email" placeholder="Username" name="uname"><br><br>
+        <input type="password" id="pass" required [(ngModel)]="user.password"  placeholder="Password" name="pass"><br><br>
+        <p>{{username}}</p>
+        <button type="submit" class="btn">Login</button>
+    </div>
+  </form>

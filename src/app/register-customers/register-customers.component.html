@@ -1,0 +1,38 @@
+<head>
+    <title>Testing Register File Upload</title>
+  <script src="src/app/register-customers/script.js"></script>
+  </head>
+<h3>Register</h3>
+<div style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="lastname">FullName</label>
+      <input type="text" class="form-control" id="fname" required [(ngModel)]="user.fullname" name="fname">
+    </div>
+    <div class="form-group">
+      <label for="lastname">Email</label>
+      <input type="email" class="form-control" id="email" required [(ngModel)]="user.email" name="email">
+    </div>
+<div class="form-group">
+      <label for="lastname">Password</label>
+      <input type="password" class="form-control" id="pass" required [(ngModel)]="user.password" name="pass">
+    </div>
+    <div class="form-group">
+      <label for="lastname">RepeatPassword</label>
+      <input type="password" class="form-control" id="rpass" required [(ngModel)]="user.repeatpassword" name="rpass">
+    </div>
+    <div class="btn-group">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>
+<div [hidden]="!submitted">
+  <h4>Registered successfully!</h4>
+  <button class="btn btn-success" (click)="newCustomer()">Add</button>
+</div>
+
+<ul>
+  <li *ngFor="let customer of customers">
+    <h4>{{customer.id}} - {{customer.name}} {{customer.email}}</h4>
+  </li>
+</ul>

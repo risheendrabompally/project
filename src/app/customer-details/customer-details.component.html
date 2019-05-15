@@ -1,0 +1,80 @@
+<!-- <div *ngIf="customer">
+  <div>
+    <label>Breed: </label> {{customer.breed}}
+  </div>
+  <div>
+    <label>Colour: </label> {{customer.colour}}
+  </div>
+  <div>
+    <label>imageurl: </label> {{customer.imageUrl}}
+  </div>
+  <div>
+    <label>age: </label> {{customer.age}}
+  </div>
+  -->
+
+  <!-- <span class="button is-small btn-primary" *ngIf='customer.active' (click)='updateActive(false)'>Inactive</span>
+
+  <span class="button is-small btn-primary" *ngIf='!customer.active' (click)='updateActive(true)'>Active</span>
+
+  <span class="button is-small btn-danger" (click)='deleteCustomer()'>Delete</span> -->
+
+  <!-- <hr/>
+</div> -->
+
+<!-- <div  class="row" >
+  
+  <div class = "column">
+    <div *ngIf="customer" class="thumbnail">
+        <img src="{{customer.imageUrl}}" style="width:100% ">
+        <div>
+          <label>Breed: </label> {{customer.breed}}
+        </div>
+        <div>
+          <label>Colour: </label> {{customer.colour}}
+        </div>
+       
+        <div>
+          <label>Age: </label> {{customer.age}}
+        </div>
+
+        <div *ngIf="readLocalStorageValue('Role')=='owner'">
+          <button>Delete Puppy</button>
+        </div>
+        <div *ngIf="readLocalStorageValue('Role')=='borrower'">
+          <button>Borrow</button>
+        </div>
+      
+    </div>
+  </div>
+</div> -->
+
+<div class="row">
+  
+  
+      <div *ngIf="customer" >
+         
+        
+      <img class="card-img-top" src="{{customer.imageUrl}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><b>Breed: </b> {{customer.breed}}</h5>
+        <p class="card-text"><b>Colour:  </b>{{customer.colour}}</p>
+        <p class="card-text"><b>Age:  </b>{{customer.age}}</p>
+        <div *ngIf="readLocalStorageValue('Role')=='owner'">
+          <button (click)="deleteCustomer()">Delete Puppy</button>
+        </div>
+        <div *ngIf="readLocalStorageValue('Role')=='borrower'">
+          <button (click)="addCart(customer.id)">Borrow</button>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+  
+  </div>
+  
+
+
+
+

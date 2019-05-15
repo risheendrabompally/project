@@ -1,0 +1,16 @@
+<form (ngSubmit)="onSubmit()">
+  <div class="body"></div>
+      <div class="grad"></div>
+      <div class="header">
+        <div>Pet<span>Owner</span></div>
+      </div>
+      <br>
+      <div class="login">
+          <p *ngIf="readValue('loginmsg')!='nothing'">{{readValue('loginmsg')}}</p>
+          <input type="text" id="uname" required [(ngModel)]="user.email" placeholder="Username" name="uname"><br><br>
+          <input type="password" id="pass" required [(ngModel)]="user.password"  placeholder="Password" name="pass"><br><br>
+          <p>{{username}}</p>
+          <button type="submit" class="btn">Login</button>
+      </div>
+    </form>
+    
