@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: Puppies_creation
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: rbompall
+Implementation-Vendor-Id: com.petcare
+Build-Jdk: 1.8.0_141
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/Puppies_creation
+Created-By: Maven Integration for Eclipse
+
