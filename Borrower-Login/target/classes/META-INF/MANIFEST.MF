@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: Borrower-Login
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: rbompall
+Implementation-Vendor-Id: com.petcare.login
+Build-Jdk: 1.8.0_141
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/Borrower-Login
+Created-By: Maven Integration for Eclipse
+
